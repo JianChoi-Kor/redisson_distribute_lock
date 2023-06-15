@@ -61,8 +61,8 @@ class CouponServiceTest {
     }
 
     private class UsingLockMember implements Runnable {
-        private String couponKey;
-        private CountDownLatch countDownLatch;
+        private final String couponKey;
+        private final CountDownLatch countDownLatch;
 
         public UsingLockMember(String couponKey, CountDownLatch countDownLatch) {
             this.couponKey = couponKey;
@@ -77,8 +77,8 @@ class CouponServiceTest {
     }
 
     private class NoLockMember implements Runnable {
-        private String couponKey;
-        private CountDownLatch countDownLatch;
+        private final String couponKey;
+        private final CountDownLatch countDownLatch;
 
         public NoLockMember(String couponKey, CountDownLatch countDownLatch) {
             this.couponKey = couponKey;
