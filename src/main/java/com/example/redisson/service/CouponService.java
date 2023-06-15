@@ -14,10 +14,9 @@ import java.util.concurrent.TimeUnit;
 public class CouponService {
     private final RedissonClient redissonClient;
     private final int EMPTY = 0;
-    private final String PREFIX = "COUPON:";
 
     public String keyResolver(String code) {
-        return PREFIX + code;
+        return "COUPON:" + code;
     }
 
     public void useCouponWithLock(final String key) {
